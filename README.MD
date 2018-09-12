@@ -53,7 +53,70 @@ Launch the solution file using [MonoDevelop](https://www.monodevelop.com) - I us
     This code will initialize GTK, initialize Xamarin.Forms, then launch the Forms app inside a GTK window.
 
 * Run your app!
-  
+
     ![The app running onLinux](./Images/RunningOnLinux.png)
 
 You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/gtk/?WT.mc_id=fabulouslinux-github-jabenn).
+
+
+### Creating the Mac (Cocoa) app
+
+* Right-click on the solution and select _Add -> Add New Project..._. Choose _Mac -> App -> Cocoa App_. Select __F#__ from the drop down, then click __Next__. Give your project a name, such as `SqueakyApp.Mac`, then click __Create__.
+
+* Add the __Xamarin.Forms__, __Fabulous.Core__, __Fabulous.LiveUpdate__ and __Newtonsoft.Json__ NuGet packages to this project, and update the Xamarin.Forms package used by the _SqueakyApp_ .NET Standard project to the same version as you have just installed.
+
+* Add a reference to the _SqueakyApp_ .NET Standard project to your new GTK project.
+
+* Open up `Main.fs`, and change the code to match the following:
+
+    ```fsharp
+    namespace SqueakyApp.Gtk
+        open System
+        open AppKit
+
+        module main =
+            [<EntryPoint>]
+            let main args =
+                NSApplication.Init ()
+                NSApplication.SharedApplication.Delegate <- new AppDelegate();
+                NSApplication.Main (args)
+                0
+    ```
+
+    This code will initialize app delegate that will run the Mac app. Here is app delegate code.
+
+    ```fsharp
+    open System
+    open Foundation
+    open AppKit
+    open Xamarin.Forms
+    open Xamarin.Forms.Platform.MacOS
+
+    [<Register ("AppDelegate")>]
+    type AppDelegate () =
+        inherit FormsApplicationDelegate ()
+
+        let mutable _window : NSWindow = null
+        do
+            let style = NSWindowStyle.Closable |||  NSWindowStyle.Resizable ||| NSWindowStyle.Titled
+            let rect = CoreGraphics.CGRect(200., 1000., 1024., 768.)
+            _window <- new NSWindow(rect, style, NSBackingStore.Buffered, false)
+            _window.Title <- "Hello Fabulous Mac!"
+            _window.TitleVisibility <- NSWindowTitleVisibility.Hidden
+
+        override this.MainWindow =
+            _window
+
+        override this.DidFinishLaunching(notification) =
+            Forms.Init()
+            this.LoadApplication(new SqueakyApp.App())
+            base.DidFinishLaunching(notification)
+    ```
+
+    This code will initialize cocoa app, initialize Xamarin.Forms, then launch the Forms app inside a cocoa app window.
+
+* Run your app!
+
+    ![The app running onLinux](./Images/RunningOnMac.png)
+
+You can read more on adding Xamarin.Forms Cocoa support for Mac on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/mac).
