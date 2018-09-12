@@ -9,7 +9,7 @@ open Xamarin.Forms.Platform.MacOS
 type AppDelegate () =
     inherit FormsApplicationDelegate ()
 
-    let mutable _window = new NSWindow()
+    let mutable _window : NSWindow = null
     do
         let style = NSWindowStyle.Closable |||  NSWindowStyle.Resizable ||| NSWindowStyle.Titled
         let rect = CoreGraphics.CGRect(200., 1000., 1024., 768.)
