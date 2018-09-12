@@ -54,6 +54,6 @@ Launch the solution file using [MonoDevelop](https://www.monodevelop.com) - I us
 
 * Run your app!
   
-    ![The app running onLinux](./Images/RunOnLinux.png)
+    ![The app running onLinux](./Images/RunningOnLinux.png)
 
 You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/gtk/?WT.mc_id=fabulouslinux-github-jabenn).
