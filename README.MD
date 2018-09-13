@@ -59,7 +59,7 @@ Launch the solution file using [MonoDevelop](https://www.monodevelop.com) - I us
 You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/gtk/?WT.mc_id=fabulouslinux-github-jabenn).
 
 
-### Creating the Mac (Cocoa) app
+### Creating the macOS (Cocoa) app
 
 * Right-click on the solution and select _Add -> Add New Project..._. Choose _Mac -> App -> Cocoa App_. Select __F#__ from the drop down, then click __Next__. Give your project a name, such as `SqueakyApp.Mac`, then click __Create__.
 
@@ -83,7 +83,7 @@ You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microso
                 0
     ```
 
-    This code will initialize app delegate that will run the Mac app. Here is app delegate code.
+    This code will initialize app delegate that will run the macOS app. Here is app delegate code.
 
     ```fsharp
     open System
@@ -117,6 +117,6 @@ You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microso
 
 * Run your app!
 
-    ![The app running onLinux](./Images/RunningOnMac.png)
+    ![The app running on macOS](./Images/RunningOnMac.png)
 
-You can read more on adding Xamarin.Forms Cocoa support for Mac on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/mac).
+You can read more on adding Xamarin.Forms Cocoa support for macOS on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/mac).
