@@ -56,7 +56,7 @@ Launch the solution file using [MonoDevelop](https://www.monodevelop.com) - I us
 
     ![The app running onLinux](./Images/RunningOnLinux.png)
 
-You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/gtk/?WT.mc_id=fabulouslinux-github-jabenn).
+You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microsoft.com](https://docs.microsoft.com/xamarin/xamarin-forms/platform/gtk/?WT.mc_id=academic-0000-jabenn).
 
 
 ### Creating the macOS (Cocoa) app
@@ -119,4 +119,4 @@ You can read more on adding Xamarin.Forms GTK support for Linux on [docs.microso
 
     ![The app running on macOS](./Images/RunningOnMac.png)
 
-You can read more on adding Xamarin.Forms Cocoa support for macOS on [docs.microsoft.com](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/platform/mac).
+You can read more on adding Xamarin.Forms Cocoa support for macOS on [docs.microsoft.com](https://docs.microsoft.com/xamarin/xamarin-forms/platform/mac?WT.mc_id=academic-0000-jabenn).
